@@ -7,7 +7,7 @@
 Install with [npm](https://www.npmjs.org)
 
 ```
-npm install --save-dev gulp-eco
+npm install https://github.com/chizhovdee/gulp-eco --save-dev
 ```
 
 
@@ -48,6 +48,23 @@ access templates via:
 
 ```js
 window.ECO["template_name"]({name: 'Manfred'})
+```
+
+#### options.nameExport
+
+Type: `String`
+Default: `window`
+
+it defines which will be exported your own namespace:
+
+```js
+eco({nameExport: 'module.exports'})
+```
+
+access templates via:
+
+```js
+module.exports.ECO["template_name"]({name: 'Manfred'})
 ```
 
 #### options.basePath
