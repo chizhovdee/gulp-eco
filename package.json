@@ -1,6 +1,6 @@
 {
   "name": "gulp-eco",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Precompile ECO templates into JavaScript",
   "license": "MIT",
   "repository": {
@@ -41,7 +41,7 @@
   "dependencies": {
     "gulp-util": "^2.2.0",
     "through2": "^0.4.0",
-    "eco": "~1.1.0-rc-3"
+    "eco": "git+https://github.com/chizhovdee/eco.git"
   },
   "devDependencies": {
     "mocha": "*"
