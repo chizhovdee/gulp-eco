@@ -21,7 +21,15 @@ module.exports = function (opt) {
     JSTpath = JSTpath.replace(re, '');
 
     var str = file.contents.toString();
-    output = eco.compile(str) + ';';
+    var output;
+
+    try {
+      output = eco.compile(str) + ';';
+    } catcg (err) {
+      err.fileName = file.path;
+      this.emit('error', new gutil.PluginError('gulp-eco', err));
+    }
+
     output = opt.nameExport + '.' + opt.namespace + '["' + JSTpath + '"] = ' + output + '\n';
     output = "if (!" + opt.nameExport + "." + opt.namespace + ") {\n  " + opt.nameExport + "." + opt.namespace + " = {};\n}\n" + output;
 
