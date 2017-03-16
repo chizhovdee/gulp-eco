@@ -25,7 +25,7 @@ module.exports = function (opt) {
 
     try {
       output = eco.compile(str) + ';';
-    } catcg (err) {
+    } catch (err) {
       err.fileName = file.path;
       this.emit('error', new gutil.PluginError('gulp-eco', err));
     }
